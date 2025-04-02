@@ -15,7 +15,7 @@ const Weather = ({ location }) => {
       const fetchWeatherData = async () => {
         try {
           const response = await axios.get(
-            `http://api.weatherapi.com/v1/current.json?key=a5df75cbcffb47b5b9612832250104&q=${location}&aqi=no`
+            `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}=${location}&aqi=no`
            
           );
           setWeatherData(response.data);
